@@ -22,9 +22,13 @@ Poppin' dat filter bubble
 
 * Pick a set of related google news docs
 [X] - Give me an RSS list of article links, and scrape all of the linked articles
+
 [ ] - For each article: Extract article text, aspects, and political leaning
+
 [ ] - Implement chrome extension that scrapes a page for it's article content, aspects, leaning as with RSS aggregator
+
 [ ] - Simple Comparator: Use meta tags like "keywords" and "article:tag" to serve as proxy aspects. Return nearest neighbors based on Jaccard sim of tags.
+
 
 ### Examples
 * See examples/scraping.py to see an example of how to retrieve articles from google news.
