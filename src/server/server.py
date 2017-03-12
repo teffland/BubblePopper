@@ -1,5 +1,7 @@
-from flask import Flask, request, render_template_string, redirect, url_for
+from flask import Flask, request, render_template_string, redirect, url_for, jsonify
 app = Flask(__name__)
+
+from scrape import scrapeLink
 
 @app.route('/')
 def home():
@@ -9,7 +11,12 @@ def home():
 @app.route('/read_url')
 def read_url():
     url = request.args.get('url')
-    return render_template_string('You sent us this <a href="{}">link</a>'.format(url))
+    url_data = scrapeLink(url)
+    if url_data:
+        data = url_data['title'].encode('utf8')
+    else:
+        data = {'ERROR': "FAILED TO PARSE LINK"}
+    return jsonify(data)
 
 
 if __name__ == '__main__':
