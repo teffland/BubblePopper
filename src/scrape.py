@@ -11,26 +11,31 @@ def scrapeLink(url):
     response = opener.open(url)
     raw_html = response.read()
     g = goose.Goose()
-    a = g.extract(raw_html=raw_html)
+    try:
+        a = g.extract(raw_html=raw_html)
+        if a.cleaned_text == '': return None
 
-    soup = BeautifulSoup(raw_html, "lxml")
-    metadata = [{a: tag[a] for a in tag.attrs}
-                for tag in soup.find_all("meta")]
+        soup = BeautifulSoup(raw_html, "lxml")
+        metadata = [{a: tag[a] for a in tag.attrs}
+                    for tag in soup.find_all("meta")]
 
-    parsed_uri = urlparse(url)
-    domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+        parsed_uri = urlparse(url)
+        domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
 
-    result = dict()
-    result["content"] = a.cleaned_text
-    result["title"] = a.title
-    result["domain"] = domain
-    cl = soup.find("link", rel="canonical")
-    if cl != None:
-        result["url"] = cl["href"]
-    else:
-        result["url"] = url
-    result["metadata"] = metadata
-    return result
+        result = dict()
+        result["content"] = a.cleaned_text
+        result["title"] = a.title
+        result["domain"] = domain
+        cl = soup.find("link", rel="canonical")
+        if cl != None:
+            result["url"] = cl["href"]
+        else:
+            result["url"] = url
+        result["metadata"] = metadata
+        return result
+    except RuntimeError, e:
+        # soup sometimes hits recursion depth because recursion is bad.
+        return None
 
 def scrapeGoogleTopNews():
     try:
@@ -40,7 +45,7 @@ def scrapeGoogleTopNews():
         # Python 3
         from html.parser import HTMLParser
     h = HTMLParser()
-    ua = "Mozilla/5.0"
+    ua = "Firefox/48.0"
     gnews_url = "https://news.google.com/?output=rss"
 
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
