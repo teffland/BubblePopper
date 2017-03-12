@@ -5,7 +5,6 @@ Poppin' dat filter bubble
 
 * [PolitEcho](http://politecho.org/)
 * [Read Across the Aisle](http://www.readacrosstheaisle.com/)
-* [
 
 ### Goals
 * Look at article `<meta>` tags as proxy for the "aspects" of a document
@@ -21,6 +20,7 @@ Poppin' dat filter bubble
 * Use google news rss feeds to get large streams of articles, indexed by events
 
 * Pick a set of related google news docs
+
 [ ] - Give me an RSS list of article links, and scrape all of the linked articles
 [ ] - For each article: Extract article text, aspects, and political leaning
 [ ] - Implement chrome extension that scrapes a page for it's article content, aspects, leaning as with RSS aggregator
