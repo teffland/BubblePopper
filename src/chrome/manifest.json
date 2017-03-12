@@ -12,14 +12,15 @@
   },
 
   "permissions": [
-      "http://localhost/",
       "https://localhost/"
   ],
+
+  
 
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["content.js"]
+      "js": ["jquery-3.1.1.min.js", "content.js"]
     }
   ]
 }
