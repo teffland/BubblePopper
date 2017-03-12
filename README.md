@@ -21,6 +21,7 @@ Poppin' dat filter bubble
 * Use google news rss feeds to get large streams of articles, indexed by events
 
 * Pick a set of related google news docs
+
 [X] - Give me an RSS list of article links, and scrape all of the linked articles
 
 [ ] - For each article: Extract article text, aspects, and political leaning
