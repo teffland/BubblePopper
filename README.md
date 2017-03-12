@@ -21,7 +21,7 @@ Poppin' dat filter bubble
 
 * Pick a set of related google news docs
 
-[ ] - Give me an RSS list of article links, and scrape all of the linked articles
-[ ] - For each article: Extract article text, aspects, and political leaning
-[ ] - Implement chrome extension that scrapes a page for it's article content, aspects, leaning as with RSS aggregator
-[ ] - 
+* [ ] - Give me an RSS list of article links, and scrape all of the linked articles
+* [ ] - For each article: Extract article text, aspects, and political leaning
+* [ ] - Implement chrome extension that scrapes a page for it's article content, aspects, leaning as with RSS aggregator
+* [ ] - 
