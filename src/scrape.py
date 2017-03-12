@@ -18,5 +18,5 @@ def scrapeLink(url):
     result["content"] = a.cleaned_text
     result["title"] = a.title
     result["url"] = soup.find("link", rel="canonical")["href"]
-    result["metadata": metadata]
+    result["metadata"] = metadata
     return result
