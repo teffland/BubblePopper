@@ -36,6 +36,9 @@ def scrapeLink(url):
     except RuntimeError, e:
         # soup sometimes hits recursion depth because recursion is bad.
         return None
+    except IndexError, e:
+        # goose sometimes returns index error when trying to get the title!?
+        return None
 
 def scrapeGoogleTopNews():
     try:
