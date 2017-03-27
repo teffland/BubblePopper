@@ -10,6 +10,8 @@ Poppin' dat filter bubble
 * [Read Outside Your Bubble - BuzzFeed](https://www.buzzfeed.com/bensmith/helping-you-see-outside-your-bubble?utm_term=.hqZbMxL4E#.sy65N8wKe) - Pilot extension for buzz feed that shows you social media comments that have opposing views
 * [Escape Your Bubble](https://www.escapeyourbubble.com/) - Extension that inserts manually procurred content from opposite political party to help expand your views
 
+### Visualization of Text
+* [ConVis](https://www.cs.ubc.ca/~enamul/papers/ConVis_EuroVis2014.pdf) - System to visualize and explore opinions and topics in blog comments. Good visualization principle and list of user requirements.
 ### Articles (among other things) of Interest
 
 * [How Facebook Feed Algo Works(ish)](http://www.slate.com/articles/technology/cover_story/2016/01/how_facebook_s_news_feed_algorithm_works.html)
